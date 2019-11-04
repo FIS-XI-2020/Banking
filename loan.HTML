@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+
+  <title>home loan</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+body,html
+  .bg-image {
+  /* The image used */
+  background-image: url("{%static "B_App/LoanBackground.jpg"%}");
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+
+ <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">HOME LOAN</h1>
+  </div>
+</div>
+
+<div class = "bg-image"></div>
+<body>
+<div class="container">
+  <form action="{%url 'loan' %}" method='POST'>
+
+{%csrf_token%}
+    <div class="form-group">
+      <label for="name"><font color = "white">ACCOUNT NUMBER:</font></label>
+      <input type="text" class="form-control" id="name" placeholder="Account No." name="AccNo" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback"><p class="font-weight-bolder">please fill out this field.</p></div>
+    </div>
+    <div class="form-group">
+      <label for="name">FULL NAME:</label>
+      <input type="text" class="form-control" id="name" placeholder="FULL NAME" name="FullName" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback"><p class="font-weight-bolder">please fill out this field.</p></div>
+    </div>
+    <div class="form-group">
+      <label for="pin">TIME PERIOD:</label>
+      <input type="number" class="form-control" id="pin" placeholder="MONTHS" name="months" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback"><p class="font-weight-bolder">please fill out this field.</p></div>
+    </div>
+    <div class="form-group">
+      <label for="amount">AMOUNT:</label>
+      <input type="number" class="form-control" id="pan" placeholder="AMOUNT" name="amount" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback"><p class="font-weight-bolder">please fill out this field.</p></div>
+    </div>
+      </label>
+    </div>
+    <input type="submit" value="Submit"/>
+  </form>
+</div>
+</body>
+</html>

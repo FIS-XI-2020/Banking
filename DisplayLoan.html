@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+  <title>Loan Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+body,html
+  .bg-image {
+  /* The image used */
+  background-image: url("{%static "B_App/touch.jpg"%}");
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+<form action="#" method="post">
+<title style="color:white">PER.BANK</title>
+<br>
+<br>
+ <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Loan Details</h1>
+  </div>
+</div>
+<div class="container">         
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th>ACCOUNT NO.</th> 
+        <th>FULL NAME</th> 
+        <th>TIME PERIOD</th> 
+        <th>AMOUNT</th>
+	<th>EMI(₹ p/m)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for detail in info %}
+        
+        <td>{{ detail }}</td> 
+        {% endfor %}
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+<br>
+<font color = "white">
+<p>An interest rate of 6% has been levied on your loan amount.</p>
+<p>The amount has been added to your Current Balance.</p>
+</font>
+<center><a href="{% url 'personal_banking' %}" class="btn btn-info" role="button">See your account details</a></center>
+<br>
+<br>
+</form>
+</body>
+</html>
